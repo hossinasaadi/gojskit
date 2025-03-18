@@ -5,6 +5,11 @@ on:
     tags:
       - "v*"
   workflow_dispatch:  # Allows manual triggering from GitHub Actions UI
+    inputs:
+      tag_name:
+        description: ""
+        required: false
+        default: ""
 
 jobs:
   build:
