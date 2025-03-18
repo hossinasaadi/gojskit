@@ -8,17 +8,17 @@ import (
 )
 
 func main() {
+	script := `
+				function print(a,b,c) {
+					console.log(a,b,c)
+				}
+				function printAndReturn(a,b,c) {
+					console.log(a,b,c)
+					return [a,b,c].join(",");
+				}
+			`
 	context := gojs.Core{}
-	context.EvaluateScript(`
-    function print(a,b,c) {
-        console.log(a,b,c)
-    }
-    function printAndReturn(a,b,c) {
-        console.log(a,b,c)
-        return [a,b,c].join(",");
-    }
-	
-	`)
+	context.EvaluateScript(script)
 	params := []interface{}{"hello", 42, true}
 
 	// Convert to JSON
