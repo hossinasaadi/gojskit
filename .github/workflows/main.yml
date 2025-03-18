@@ -59,5 +59,8 @@ jobs:
         with:
           files: |
             build/GoJsKit.xcframework.zip
+      - name: Checksums
+        uses: wangzuo/action-release-checksums@v1
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
